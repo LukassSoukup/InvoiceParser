@@ -20,7 +20,6 @@ public class GmailAPIService {
 
     @Value("${auth.user.id}")
     private String USER_ID;
-    //private static final Logger log = LoggerFactory.getLogger(GmailAPIService.class);
     public final GmailServiceProvider provider;
     public String MESSAGE_LIST_URL = "https://gmail.googleapis.com/gmail/v1/users/{userId}/messages";
 
