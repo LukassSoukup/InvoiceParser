@@ -1,1 +1,10 @@
 services:
+  springboot-app:
+    image: openjdk:23-jdk-slim
+    container_name: springboot-dev
+    working_dir: /
+    volumes:
+      - ./target:/InvoiceParser # Mount the compiled app into the container
+    ports:
+      - "8888:8888"
+    command: ["java", "-jar", "/target/InvoiceParser-0.0.1-SNAPSHOT.jar"]
