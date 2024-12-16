@@ -16,9 +16,14 @@ import java.util.Optional;
 @Service
 public class GmailProcessingService {
     public final GmailAPIService gmailAPIService;
-    @Value("${gmail.invoice.search.query}")
-    public String SEARCH_QUERY;
-
+    @Value("${gmail.invoice.search.query.idos}")
+    public String SEARCH_QUERY_IDOS;
+    @Value("${gmail.invoice.search.query.flixbus}")
+    public String SEARCH_QUERY_FLIXBUS;
+    @Value("${gmail.invoice.search.query.regiojet}")
+    public String SEARCH_QUERY_REGIOJET;
+    @Value("${gmail.invoice.search.query.pid}")
+    public String SEARCH_QUERY_PID;
     @Value("${file.path.invoice.download}")
     private String INVOICE_OUTPUT_LOCATION;
 
@@ -27,9 +32,9 @@ public class GmailProcessingService {
     }
     @SneakyThrows
     public void processInvoices() {
-        var messages = gmailAPIService.listMessages(SEARCH_QUERY).getBody();
+        var messages = gmailAPIService.listMessages(SEARCH_QUERY_IDOS).getBody();
         if(messages == null || messages.isEmpty()) {
-            log.warn("No messages found for query {}", SEARCH_QUERY);
+            log.warn("No messages found for query {}", SEARCH_QUERY_IDOS);
             return;
         }
         messages.forEach(message -> {
