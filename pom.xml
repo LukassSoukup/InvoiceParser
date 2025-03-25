@@ -49,7 +49,41 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client -->
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client-jetty -->
+        <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client-jetty</artifactId>
+            <version>1.36.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-gmail -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-gmail</artifactId>
+            <version>v1-rev20240520-2.0.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.16</version>
         </dependency>
     </dependencies>
 
@@ -63,6 +97,11 @@
                         <path>
                             <groupId>org.springframework.boot</groupId>
                             <artifactId>spring-boot-configuration-processor</artifactId>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.36</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
